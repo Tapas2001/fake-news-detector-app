@@ -14,7 +14,7 @@ st.set_page_config(page_title="📰 Fake News Detector", layout="centered")
 st.title("📰 Fake News Detector")
 @st.cache_data
 def load_dataset():
-    df = load_data(path="data/news.csv")
+    df = load_data(path="data/sample.csv")
     return df
     
 # ---------- Load model and vectorizer ----------

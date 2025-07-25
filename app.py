@@ -14,12 +14,12 @@ st.set_page_config(page_title="📰 Fake News Detector", layout="centered")
 st.title("📰 Fake News Detector")
 @st.cache_data
 def load_dataset():
-    df = load_data(path="data\sample.csv")
+    df = load_data(path="data/news.csv")
     return df
     
 # ---------- Load model and vectorizer ----------
 @st.cache_resource
-def load_model(model_path="model\model.pkl", vectorizer_path="model\vectorizer.pkl"):
+def load_model(model_path="model/model.pkl", vectorizer_path="model/vectorizer.pkl"):
     try:
         model = joblib.load(model_path)
         vectorizer = joblib.load(vectorizer_path)
@@ -32,7 +32,7 @@ def load_model(model_path="model\model.pkl", vectorizer_path="model\vectorizer.p
 @st.cache_data
 def load_accuracy():
     try:
-        with open("model\metrics.json") as f:
+        with open("model/metrics.json") as f:
             metrics = json.load(f)
             return metrics.get("accuracy", None)
     except Exception:

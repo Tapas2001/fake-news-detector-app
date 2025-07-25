@@ -15,9 +15,10 @@ __pycache__/
 env/
 venv/
 
-# # Data & Model Files
-# *.csv
-# data/
+# Data & Model Files
+*.csv
+data/
+test_results/
 
 # System files
 .DS_Store
